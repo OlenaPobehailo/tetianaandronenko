@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Gallery from 'react-photo-gallery'
 import css from './PhotoGallery.module.css'
-import { images } from '@/assets/images'
+import { images } from '@/app/assets/images'
 
 const {
     model_1082,
@@ -236,7 +236,7 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
                                     src={selectedPhoto}
                                     alt="Selected Photo"
                                     style={{ width: '100%', height: '100%' }}
-                                    width="800"
+                                    width="1000"
                                     height="1000"
                                 />
                             </div>

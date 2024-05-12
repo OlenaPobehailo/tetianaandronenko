@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import PageWrapper from '@/components/PageWrapper'
-import { images } from '@/assets/images'
+import { images } from '@/app/assets/images'
 import css from './about.module.css'
 
 export interface IPageProps {}
