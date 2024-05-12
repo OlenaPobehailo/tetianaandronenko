@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import css from './Navbar.module.css'
-import Container from '../Container'
 
 export interface INavbarProps {}
 

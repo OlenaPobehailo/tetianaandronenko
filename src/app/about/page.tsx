@@ -1,9 +1,14 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
-import PageWrapper from '../components/PageWrapper'
+import PageWrapper from '@/app/components/PageWrapper'
+import { images } from '@/app/assets/images'
 import css from './about.module.css'
-import { images } from '../assets/images'
 
 export interface IPageProps {}
+
+export const metadata: Metadata = {
+    title: 'About Tetiana Andronenko',
+}
 
 export default function Page(props: IPageProps) {
     return (

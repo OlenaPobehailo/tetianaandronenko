@@ -1,6 +1,11 @@
-import PageWrapper from '../components/PageWrapper'
+import { Metadata } from 'next'
+import PageWrapper from '@/app/components/PageWrapper'
 
 export interface IPageProps {}
+
+export const metadata: Metadata = {
+    title: 'Tetiana Andronenko - Contacts',
+}
 
 export default function Page(props: IPageProps) {
     return (
