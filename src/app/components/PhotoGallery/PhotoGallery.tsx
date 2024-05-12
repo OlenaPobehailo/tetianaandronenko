@@ -195,7 +195,11 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
                             width: photo.width,
                         }}
                         onClick={(event) =>
-                            onClick(event, { index: photo.key })
+                            photo.key
+                                ? onClick!(event, {
+                                      index: parseInt(photo.key),
+                                  })
+                                : undefined
                         }
                     >
                         <img
@@ -219,7 +223,7 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
                                 src={selectedPhoto}
                                 alt="Selected Photo"
                                 className={css.imageContainer}
-                                style={{ width: '100%', height: 'auto' }}
+                                // style={{ width: '90%', height: 'auto' }}
                             />
                         )}
                     </div>
