@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import PageWrapper from '@/app/components/PageWrapper'
-import PhotoGallery from '../components/PhotoGallery'
+import PageWrapper from '@/components/PageWrapper'
+import PhotoGallery from '@/components/PhotoGallery'
 
 export interface IPageProps {}
 

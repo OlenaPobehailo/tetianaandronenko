@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import PageWrapper from '@/app/components/PageWrapper'
+import PageWrapper from '@/components/PageWrapper'
 
 export interface IPageProps {}
 

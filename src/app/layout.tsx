@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Container from './components/Container'
 import './globals.css'
+import Container from '@/components/Container'
+import Navbar from '@/components/Navbar'
 
 export default function RootLayout({
     children,

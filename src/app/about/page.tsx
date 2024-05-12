@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import PageWrapper from '@/app/components/PageWrapper'
-import { images } from '@/app/assets/images'
+import PageWrapper from '@/components/PageWrapper'
+import { images } from '@/assets/images'
 import css from './about.module.css'
 
 export interface IPageProps {}
@@ -17,7 +17,7 @@ export default function Page(props: IPageProps) {
                 <div className={css.imgWrapper}>
                     <Image
                         className={css.heroImage}
-                        src={images.hero}
+                        src={images.model_1091}
                         width="800"
                         alt="Tetiana Andronenko"
                         priority={true}
@@ -26,12 +26,13 @@ export default function Page(props: IPageProps) {
                 <div className={css.about}>
                     <h1>About me</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Aspernatur deserunt, exercitationem nisi quidem
-                        voluptatem praesentium animi fugiat consectetur
-                        doloremque quia cum, maxime quisquam dolores? Aliquid
-                        veritatis rem at incidunt exercitationem.
+                        Ukrainian woman who is manifesting herself in this world
+                        in many ways. Professional Coach, wife, mom and a woman
+                        who loves life. I bring elegance and casual chic to
+                        photography. Revealing the depth of a woman&apos;s
+                        feelings and beauty.
                     </p>
+                    <p>Working with me fills you with energy!</p>
                 </div>
             </div>
         </PageWrapper>
