@@ -19,79 +19,162 @@ const photos = [
         src: img1.src,
         width: 1600,
         height: 1200,
-        key: '1',
+        key: '0',
     },
     {
         src: img2.src,
         width: 400,
         height: 400,
-        key: '2',
+        key: '1',
     },
     {
         src: img3.src,
         width: 600,
         height: 600,
-        key: '3',
+        key: '2',
     },
     {
         src: img4.src,
         width: 400,
         height: 400,
-        key: '14',
+        key: '3',
     },
 
     {
         src: img5.src,
         width: 400,
         height: 600,
-        key: '5',
+        key: '4',
     },
     {
         src: img6.src,
         width: 800,
         height: 800,
-        key: '6',
+        key: '5',
     },
     {
         src: img7.src,
         width: 600,
         height: 600,
-        key: '7',
+        key: '6',
     },
     {
         src: img8.src,
         width: 1600,
         height: 1200,
+        key: '7',
+    },
+
+    {
+        src: img4.src,
+        width: 400,
+        height: 400,
         key: '8',
+    },
+    {
+        src: img2.src,
+        width: 400,
+        height: 400,
+        key: '9',
+    },
+    {
+        src: img1.src,
+        width: 1600,
+        height: 1200,
+        key: '10',
+    },
+    {
+        src: img3.src,
+        width: 600,
+        height: 600,
+        key: '11',
+    },
+
+    {
+        src: img6.src,
+        width: 800,
+        height: 800,
+        key: '12',
+    },
+    {
+        src: img8.src,
+        width: 1600,
+        height: 1200,
+        key: '13',
+    },
+    {
+        src: img7.src,
+        width: 600,
+        height: 600,
+        key: '14',
+    },
+    {
+        src: img5.src,
+        width: 400,
+        height: 600,
+        key: '15',
     },
 ]
 
 export default function PhotoGallery(props: IPhotoGalleryProps) {
     const [showModal, setShowModal] = useState(false)
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+
     const [windowWidth, setWindowWidth] = useState<number | undefined>(
         undefined
     )
-    const [isWidthExceeded, setIsWidthExceeded] = useState(false);
+    const [windowHeight, setWindowHeight] = useState<number | undefined>(
+        undefined
+    )
 
     useEffect(() => {
         const handleResize = () => {
-            setWindowWidth(window.innerWidth)
+            const windowWidth = window.innerWidth
+            const windowHeight = window.innerHeight
+
+            const maxWidth = windowWidth * 0.85
+            const maxHeight = windowHeight * 0.85
+
+            const imageRatio = selectedPhoto
+                ? photos.some((photo) => photo.src === selectedPhoto)
+                    ? (photos.find((photo) => photo.src === selectedPhoto)
+                          ?.width || 1) /
+                      (photos.find((photo) => photo.src === selectedPhoto)
+                          ?.height || 1)
+                    : 1
+                : 1
+
+            let width = maxWidth
+            let height = maxHeight
+
+            if (imageRatio > 1) {
+                width = Math.min(maxWidth, maxHeight * imageRatio)
+            } else {
+                height = Math.min(maxHeight, maxWidth / imageRatio)
+            }
+
+            setWindowWidth(width)
+            setWindowHeight(height)
         }
 
         window.addEventListener('resize', handleResize)
         handleResize()
 
         return () => window.removeEventListener('resize', handleResize)
-    }, [])
+    }, [selectedPhoto])
 
-    const openModal = (src: string) => {
-        setSelectedPhoto(src)
+    const openModal = (event: React.MouseEvent, photo: { index: number }) => {
+        const { index } = photo
+
+        setSelectedPhoto(photos[index].src)
+        setSelectedIndex(index)
         setShowModal(true)
     }
 
     const closeModal = () => {
         setSelectedPhoto(null)
+        setSelectedIndex(null)
         setShowModal(false)
     }
 
@@ -99,7 +182,30 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
         <div>
             <Gallery
                 photos={photos}
-                onClick={(event, { photo }) => openModal(photo.src)}
+                onClick={openModal}
+                direction="row"
+                margin={4}
+                renderImage={({ photo, margin, onClick }) => (
+                    <div
+                        key={photo.key}
+                        className={css.galleryItem}
+                        style={{
+                            margin,
+                            height: photo.height,
+                            width: photo.width,
+                        }}
+                        onClick={(event) =>
+                            onClick(event, { index: photo.key })
+                        }
+                    >
+                        <img
+                            src={photo.src}
+                            alt="Example Photo"
+                            className={css.imageContainer}
+                            style={{ cursor: 'pointer' }}
+                        />
+                    </div>
+                )}
             />
 
             {showModal && (
@@ -109,14 +215,11 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
                             &times;
                         </span>
                         {selectedPhoto && (
-                            <Image
+                            <img
                                 src={selectedPhoto}
                                 alt="Selected Photo"
-                                objectFit="cover"
-                                width={
-                                    windowWidth ? windowWidth * 0.9 : undefined
-                                }
-                                height={300}
+                                className={css.imageContainer}
+                                style={{ width: '100%', height: 'auto' }}
                             />
                         )}
                     </div>

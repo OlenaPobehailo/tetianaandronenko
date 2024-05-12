@@ -12,7 +12,6 @@ export default function Page(props: IPageProps) {
     return (
         <>
             <PageWrapper>
-                <h1>Gallery</h1>
                 <PhotoGallery />
             </PageWrapper>
         </>
