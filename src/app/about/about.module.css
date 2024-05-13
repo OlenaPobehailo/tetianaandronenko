@@ -32,9 +32,8 @@
     padding: 24px 12px;
 
     @media only screen and (min-width: 900px) {
-        flex-grow: 1;
-        flex-basis: 50%;
-        padding: 24px;
+        /* flex-grow: 1; */
+        /* flex-basis: 50%; */
     }
 
     & h1 {
@@ -52,8 +51,12 @@
             font-size: 16px;
         }
 
-        @media only screen and (min-width: 1440px) {
+        @media only screen and (min-width: 900px) {
             font-size: 18px;
+        }
+
+        @media only screen and (min-width: 1440px) {
+            font-size: 20px;
         }
     }
 }

@@ -174,6 +174,20 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
     const [showModal, setShowModal] = useState(false)
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
 
+    useEffect(() => {
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                closeModal()
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyPress)
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress)
+        }
+    }, [])
+
     const openModal = (event: React.MouseEvent, photo: { index: number }) => {
         const { index } = photo
 
@@ -187,6 +201,13 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
         setShowModal(false)
         document.body.classList.remove('modal-open')
     }
+
+    const handleModalClick = (event: React.MouseEvent) => {
+        if (event.target === event.currentTarget) {
+            closeModal()
+        }
+    }
+
     return (
         <div>
             <Gallery
@@ -224,7 +245,7 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
             />
 
             {showModal && (
-                <div className={css.modal}>
+                <div className={css.modal} onClick={handleModalClick}>
                     <div className={css.modalContent}>
                         <span className={css.close} onClick={closeModal}>
                             &times;

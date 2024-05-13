@@ -3,6 +3,7 @@ import Image from 'next/image'
 import PageWrapper from '@/components/PageWrapper'
 import { images } from '@/assets/images'
 import css from './about.module.css'
+import ScrollArrow from '@/components/ScrollArrow'
 
 export interface IPageProps {}
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page(props: IPageProps) {
     return (
         <PageWrapper>
+            <ScrollArrow />
             <div className={css.wrapper}>
                 <div className={css.imgWrapper}>
                     <Image
