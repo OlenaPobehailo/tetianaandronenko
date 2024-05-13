@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Gallery from 'react-photo-gallery'
 import css from './PhotoGallery.module.css'
-import { images } from '@/app/assets/images'
+import { images } from '@/assets/images'
 
 const {
     model_1082,
