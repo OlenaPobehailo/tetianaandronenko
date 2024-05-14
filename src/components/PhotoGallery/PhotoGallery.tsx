@@ -239,6 +239,7 @@ const PhotoGallery = () => {
                 )}
             />
 
+            {loadingPhoto && <Loader />}
             <Modal isOpen={showModal} onClose={closeModal}>
                 {selectedPhoto && (
                     <Image
@@ -251,7 +252,6 @@ const PhotoGallery = () => {
                         height="1000"
                     />
                 )}
-                {loadingPhoto && <Loader />}
             </Modal>
         </div>
     )
