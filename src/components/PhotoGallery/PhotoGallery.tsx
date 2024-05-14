@@ -5,6 +5,7 @@ import Gallery from 'react-photo-gallery'
 import css from './PhotoGallery.module.css'
 import { images } from '@/assets/images'
 import Loader from '../Loader'
+import Modal from '../Modal'
 
 const {
     model_1082,
@@ -171,25 +172,11 @@ const photos = [
     },
 ]
 
-export default function PhotoGallery(props: IPhotoGalleryProps) {
+const PhotoGallery = () => {
     const [showModal, setShowModal] = useState(false)
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
     const [loading, setLoading] = useState(true)
     const [loadingPhoto, setLoadingPhoto] = useState(true)
-
-    useEffect(() => {
-        const handleKeyPress = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                closeModal()
-            }
-        }
-
-        window.addEventListener('keydown', handleKeyPress)
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress)
-        }
-    }, [])
 
     const openModal = (event: React.MouseEvent, photo: { index: number }) => {
         const { index } = photo
@@ -198,6 +185,8 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
         setShowModal(true)
         document.body.classList.add('modal-open')
         setLoadingPhoto(true)
+
+        document.body.classList.add('modal-open')
     }
 
     const closeModal = () => {
@@ -206,11 +195,11 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
         document.body.classList.remove('modal-open')
     }
 
-    const handleModalClick = (event: React.MouseEvent) => {
-        if (event.target === event.currentTarget) {
-            closeModal()
-        }
-    }
+    // const handleModalClick = (event: React.MouseEvent) => {
+    //     if (event.target === event.currentTarget) {
+    //         closeModal()
+    //     }
+    // }
 
     return (
         <div>
@@ -242,37 +231,30 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
                             alt="Example Photo"
                             className={css.imageContainer}
                             style={{ cursor: 'pointer' }}
+                            onLoad={() => setLoading(false)}
                             width={photo.width}
                             height={photo.height}
-                            onLoad={() => setLoading(false)}
                         />
                     </div>
                 )}
             />
 
-            {showModal && (
-                <div className={css.modal} onClick={handleModalClick}>
-                    <div className={css.modalContent}>
-                        <span className={css.close} onClick={closeModal}>
-                            &times;
-                        </span>
-                        {selectedPhoto && (
-                            <div>
-                                <Image
-                                    className={css.imageContainer}
-                                    src={selectedPhoto}
-                                    alt="Selected Photo"
-                                    style={{ width: '100%', height: '100%' }}
-                                    width="1000"
-                                    height="1000"
-                                    onLoad={() => setLoadingPhoto(false)} // Встановлення loadingPhoto в false після завантаження зображення
-                                />
-                            </div>
-                        )}
-                    </div>
-                    {loadingPhoto && <Loader />}
-                </div>
-            )}
+            <Modal isOpen={showModal} onClose={closeModal}>
+                {selectedPhoto && (
+                    <Image
+                        className={css.imageContainer}
+                        src={selectedPhoto}
+                        alt="Selected Photo"
+                        style={{ width: '100%', height: 'auto' }}
+                        onLoad={() => setLoadingPhoto(false)}
+                        width="1000"
+                        height="1000"
+                    />
+                )}
+                {loadingPhoto && <Loader />}
+            </Modal>
         </div>
     )
 }
+
+export default PhotoGallery
