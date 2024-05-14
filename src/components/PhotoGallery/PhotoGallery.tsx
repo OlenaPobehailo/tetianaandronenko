@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Gallery from 'react-photo-gallery'
 import css from './PhotoGallery.module.css'
 import { images } from '@/assets/images'
+import Loader from '../Loader'
 
 const {
     model_1082,
@@ -173,6 +174,8 @@ const photos = [
 export default function PhotoGallery(props: IPhotoGalleryProps) {
     const [showModal, setShowModal] = useState(false)
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
+    const [loading, setLoading] = useState(true)
+    const [loadingPhoto, setLoadingPhoto] = useState(true)
 
     useEffect(() => {
         const handleKeyPress = (event: KeyboardEvent) => {
@@ -194,6 +197,7 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
         setSelectedPhoto(photos[index].src)
         setShowModal(true)
         document.body.classList.add('modal-open')
+        setLoadingPhoto(true)
     }
 
     const closeModal = () => {
@@ -210,6 +214,7 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
 
     return (
         <div>
+            {loading && <Loader />}
             <Gallery
                 photos={photos}
                 onClick={openModal}
@@ -239,6 +244,7 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
                             style={{ cursor: 'pointer' }}
                             width={photo.width}
                             height={photo.height}
+                            onLoad={() => setLoading(false)}
                         />
                     </div>
                 )}
@@ -259,10 +265,12 @@ export default function PhotoGallery(props: IPhotoGalleryProps) {
                                     style={{ width: '100%', height: '100%' }}
                                     width="1000"
                                     height="1000"
+                                    onLoad={() => setLoadingPhoto(false)} // Встановлення loadingPhoto в false після завантаження зображення
                                 />
                             </div>
                         )}
                     </div>
+                    {loadingPhoto && <Loader />}
                 </div>
             )}
         </div>
