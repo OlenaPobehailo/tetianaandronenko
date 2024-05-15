@@ -1,0 +1,108 @@
+.formWrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 480px) {
+        width: 85%;
+    }
+
+    @media only screen and (min-width: 768px) {
+        width: 75%;
+    }
+
+    @media only screen and (min-width: 900px) {
+        width: 60%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        width: 50%;
+    }
+}
+
+.allFieldsWrapper {
+    margin-bottom: 36px;
+}
+
+.fieldWrapper {
+    position: relative;
+    width: 90%;
+    margin: 0 auto 8px;
+
+    & label {
+        display: block;
+        visibility: hidden;
+        margin-bottom: 4px;
+
+        font-size: 14px;
+    }
+
+    & input {
+        height: 30px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    & textarea {
+        position: relative;
+        height: 50px;
+        padding: 10px;
+        resize: none;
+        &::placeholder {
+            position: absolute;
+            bottom: 10px;
+        }
+    }
+
+    & input,
+    & textarea {
+        width: 100%;
+        margin-bottom: 4px;
+        background-color: transparent;
+
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+
+        &::placeholder {
+            font-size: 14px;
+        }
+    }
+}
+
+.fieldWrapper input:focus::placeholder {
+    transform: translateY(-10px);
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.fieldWrapper textarea:focus::placeholder {
+    transform: translateY(-100px);
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.fieldWrapper textarea:focus {
+    height: 124px;
+    transition: all 0.3s ease-in-out;
+}
+
+.error {
+    font-size: 12px;
+    text-align: center;
+}
+
+.submitButton {
+    width: 60%;
+    margin: 0 auto;
+    padding: 12px;
+    font-size: 16px;
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    &:hover {
+        background-color: #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}

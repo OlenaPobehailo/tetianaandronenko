@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import PageWrapper from '@/components/PageWrapper'
+import ContactForm from '@/components/ContactForm'
 
 export interface IPageProps {}
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function Page(props: IPageProps) {
     return (
         <PageWrapper>
-            <p>Contacts</p>
+            <ContactForm />
         </PageWrapper>
     )
 }
