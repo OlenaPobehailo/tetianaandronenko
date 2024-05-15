@@ -1,21 +1,23 @@
 .galleryItem {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+
+  @media only screen and (max-width: 400px) {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+  }
 }
 
 .galleryItem img {
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
 }
 
 .galleryItem:hover img {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
-
 
 .imageContainer {
-    max-height: 90vh;
+  max-height: 90vh;
 }
-
-
-
-
