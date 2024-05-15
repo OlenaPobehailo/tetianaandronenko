@@ -35,13 +35,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
     return (
         <div className={css.backdrop} onClick={onClose}>
+            <button className={css.close} onClick={onClose}>
+                <IoMdClose />
+            </button>
             <div
                 className={css.modalContent}
                 onClick={(e) => e.stopPropagation()}
             >
-                <button className={css.close} onClick={onClose}>
-                    <IoMdClose />
-                </button>
                 {children}
             </div>
         </div>

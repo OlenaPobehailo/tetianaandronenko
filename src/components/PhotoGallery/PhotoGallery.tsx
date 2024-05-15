@@ -183,7 +183,6 @@ const PhotoGallery = () => {
 
         setSelectedPhoto(photos[index].src)
         setShowModal(true)
-        document.body.classList.add('modal-open')
         setLoadingPhoto(true)
 
         document.body.classList.add('modal-open')

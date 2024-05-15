@@ -1,4 +1,6 @@
-.backdrop  {
+.backdrop {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +15,7 @@
 }
 
 .modalContent {
-    position: relative;
+    /* position: relative; */
 
     display: flex;
     justify-content: center;
@@ -30,8 +32,11 @@
 
 .close {
     position: absolute;
-    top: -20px;
-    right: -4px;
+    /* top: -20px;
+    right: -4px; */
+
+    top: 0;
+    right: 0;
 
     padding: 0;
     margin: 0;
@@ -45,26 +50,26 @@
     transition: color 0.5s ease;
 
     @media only screen and (min-width: 400px) {
-        top: -28px;
-        right: -8px;
+        /* top: -28px;
+        right: -8px; */
         font-size: 36px;
     }
 
     @media only screen and (min-width: 560px) {
-        top: -32px;
-        right: -8px;
+        /* top: -32px;
+        right: -8px; */
         font-size: 40px;
     }
 
     @media only screen and (min-width: 768px) {
-        top: -36px;
-        right: -36px;
+        /* top: -36px;
+        right: -36px; */
         font-size: 48px;
     }
 
     @media only screen and (min-width: 900px) {
-        top: -48px;
-        right: -48px;
+        /* top: -48px;
+        right: -48px; */
         font-size: 64px;
     }
 }
