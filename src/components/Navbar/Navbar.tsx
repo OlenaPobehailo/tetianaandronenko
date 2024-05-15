@@ -4,6 +4,7 @@ import css from './Navbar.module.css'
 export interface INavbarProps {}
 
 export default function Navbar(props: INavbarProps) {
+    
     return (
         <div className={css.header}>
             <h1 className={css.title}>Tetiana Andronenko</h1>
@@ -15,7 +16,7 @@ export default function Navbar(props: INavbarProps) {
                             <span>About</span>
                         </Link>
                     </li>
-                    <li className="content ">
+                    <li>
                         <Link href="/gallery">
                             <span>Gallery</span>
                         </Link>

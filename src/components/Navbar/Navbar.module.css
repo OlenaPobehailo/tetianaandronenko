@@ -10,15 +10,47 @@
 .title {
     margin-bottom: 8px;
 
-    font-size: 32px;
+    font-size: 24px;
     text-align: center;
+
+    @media only screen and (min-width: 400px) {
+        font-size: 32px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        font-size: 38px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 40px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        font-size: 48px;
+    }
 }
 
 .subtitle {
     margin-bottom: 32px;
 
-    font-size: 24px;
+    font-size: 16px;
     text-align: center;
+
+    @media only screen and (min-width: 400px) {
+        font-size: 24px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        font-size: 28px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        font-size: 32px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        font-size: 36px;
+    }
 }
 
 .nav {
@@ -31,5 +63,23 @@
     display: flex;
     gap: 8px;
 
+    font-family: var(--medium);
     font-size: 16px;
+
+    @media only screen and (min-width: 400px) {
+        gap: 12px;
+        font-size: 20px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        gap: 16px;
+        font-size: 24px;
+    }
+
+    & li:hover {
+        color: #c01112;
+        text-decoration: underline;
+    }
 }
+
+

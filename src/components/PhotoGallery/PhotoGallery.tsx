@@ -178,7 +178,6 @@ const PhotoGallery = () => {
     const [loading, setLoading] = useState(true)
     const [loadingPhoto, setLoadingPhoto] = useState(true)
 
-
     const openModal = (event: React.MouseEvent, photo: { index: number }) => {
         const { index } = photo
 
@@ -187,8 +186,7 @@ const PhotoGallery = () => {
         document.body.classList.add('modal-open')
         setLoadingPhoto(true)
 
-        document.body.classList.add('modal-open');
-
+        document.body.classList.add('modal-open')
     }
 
     const closeModal = () => {
@@ -244,8 +242,7 @@ const PhotoGallery = () => {
             <Modal isOpen={showModal} onClose={closeModal}>
                 {selectedPhoto && (
                     <Image
-                    className={css.imageContainer}
-
+                        className={css.imageContainer}
                         src={selectedPhoto}
                         alt="Selected Photo"
                         style={{ width: '100%', height: 'auto' }}

@@ -5,10 +5,6 @@ import * as Yup from 'yup'
 import css from './ContactForm.module.css'
 
 const ContactForm = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
-
     return (
         <Formik
             initialValues={{
@@ -37,70 +33,69 @@ const ContactForm = () => {
                 <div className={css.formWrapper}>
                     <Form>
                         <div className={css.allFieldsWrapper}>
+                            <div className={css.fieldWrapper}>
+                                <label htmlFor="name">Your name:</label>
+                                <Field
+                                    className={css.input}
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your name:"
+                                />
+                                <ErrorMessage
+                                    name="name"
+                                    component="div"
+                                    className={css.error}
+                                />
+                            </div>
 
-                        <div className={css.fieldWrapper}>
-                            <label htmlFor="name">Your name:</label>
-                            <Field
-                                className={css.input}
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Your name:"
-                            />
-                            <ErrorMessage
-                                name="name"
-                                component="div"
-                                className={css.error}
-                            />
-                        </div>
+                            <div className={css.fieldWrapper}>
+                                <label htmlFor="email">Your email:</label>
+                                <Field
+                                    className={css.input}
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Your email:"
+                                />
+                                <ErrorMessage
+                                    name="email"
+                                    component="div"
+                                    className={css.error}
+                                />
+                            </div>
 
-                        <div className={css.fieldWrapper}>
-                            <label htmlFor="email">Your email:</label>
-                            <Field
-                                className={css.input}
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Your email:"
-                            />
-                            <ErrorMessage
-                                name="email"
-                                component="div"
-                                className={css.error}
-                            />
-                        </div>
+                            <div className={css.fieldWrapper}>
+                                <label htmlFor="subject">Subject:</label>
+                                <Field
+                                    className={css.input}
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Subject:"
+                                />
+                                <ErrorMessage
+                                    name="subject"
+                                    component="div"
+                                    className={css.error}
+                                />
+                            </div>
 
-                        <div className={css.fieldWrapper}>
-                            <label htmlFor="subject">Subject:</label>
-                            <Field
-                                className={css.input}
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                placeholder="Subject:"
-                            />
-                            <ErrorMessage
-                                name="subject"
-                                component="div"
-                                className={css.error}
-                            />
-                        </div>
-
-                        <div className={css.fieldWrapper}>
-                            <label htmlFor="message">Your message:</label>
-                            <Field
-                                className={css.input}
-                                as="textarea"
-                                id="message"
-                                name="message"
-                                placeholder="Your message:"
-                            />
-                            <ErrorMessage
-                                name="message"
-                                component="div"
-                                className={css.error}
-                            />
-                        </div>
+                            <div className={css.fieldWrapper}>
+                                <label htmlFor="message">Your message:</label>
+                                <Field
+                                    className={css.input}
+                                    as="textarea"
+                                    id="message"
+                                    name="message"
+                                    placeholder="Your message:"
+                                />
+                                <ErrorMessage
+                                    name="message"
+                                    component="div"
+                                    className={css.error}
+                                />
+                            </div>
                         </div>
 
                         <button

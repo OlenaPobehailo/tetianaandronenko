@@ -1,3 +1,10 @@
+:root {
+    --regular: 'OpenSans-Regular';
+    --medium: 'OpenSans-Medium';
+    --semibold: 'OpenSans-Semibold';
+    --bold: 'OpenSans-Bold';
+}
+
 html {
     box-sizing: border-box;
 }
@@ -16,16 +23,27 @@ h5,
 h6,
 p {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: 'OpenSans-Semibold', sans-serif;
+    font-weight: 500;
 }
 
 body {
     margin: 0;
     padding: 0;
 
-    /* font-family: 'Inter-Regular'; */
-    /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #fefefe, #efefef);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'OpenSans-Regular', sans-serif;
 }
 
 p:last-child {
@@ -65,22 +83,29 @@ a {
 }
 
 @font-face {
-    font-family: 'Inter-Regular';
-    src: url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Inter-Medium';
-    src: url('../fonts/Inter-Medium.ttf') format('truetype');
+    font-family: 'OpenSans-Medium';
+    src: url('../fonts/OpenSans-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Inter-Bold';
-    src: url('../fonts/Inter-Bold.ttf') format('truetype');
+    font-family: 'OpenSans-Semibold';
+    src: url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
