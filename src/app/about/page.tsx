@@ -9,6 +9,7 @@ export interface IPageProps {}
 
 export const metadata: Metadata = {
     title: 'About Tetiana Andronenko',
+    description: '',
 }
 
 export default function Page(props: IPageProps) {
