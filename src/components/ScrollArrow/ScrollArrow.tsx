@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa'
 import css from './ScrollArrow.module.css'
 

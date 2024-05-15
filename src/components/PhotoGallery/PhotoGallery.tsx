@@ -1,11 +1,11 @@
 'use client'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Gallery from 'react-photo-gallery'
-import css from './PhotoGallery.module.css'
 import { images } from '@/assets/images'
 import Loader from '../Loader'
 import Modal from '../Modal'
+import css from './PhotoGallery.module.css'
 
 const {
     model_1082,
@@ -194,12 +194,6 @@ const PhotoGallery = () => {
         setShowModal(false)
         document.body.classList.remove('modal-open')
     }
-
-    // const handleModalClick = (event: React.MouseEvent) => {
-    //     if (event.target === event.currentTarget) {
-    //         closeModal()
-    //     }
-    // }
 
     return (
         <div>

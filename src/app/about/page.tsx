@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import PageWrapper from '@/components/PageWrapper'
+import ScrollArrow from '@/components/ScrollArrow'
 import { images } from '@/assets/images'
 import css from './about.module.css'
-import ScrollArrow from '@/components/ScrollArrow'
 
 export interface IPageProps {}
 

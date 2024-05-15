@@ -18,12 +18,12 @@
 }
 
 .upArrow {
-    top: 20px;
+    top: 100px;
     bottom: auto;
 }
 
 .downArrow {
-    bottom: 20px;
+    bottom: 100px;
     top: auto;
 }
 

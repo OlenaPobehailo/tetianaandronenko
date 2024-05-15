@@ -1,8 +1,8 @@
 'use client'
 
 import { ReactNode, useEffect } from 'react'
-import css from './Modal.module.css'
 import { IoMdClose } from 'react-icons/io'
+import css from './Modal.module.css'
 
 interface ModalProps {
     isOpen: boolean
@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null
 
     return (
-        <div className={css.modal} onClick={onClose}>
+        <div className={css.backdrop} onClick={onClose}>
             <div
                 className={css.modalContent}
                 onClick={(e) => e.stopPropagation()}

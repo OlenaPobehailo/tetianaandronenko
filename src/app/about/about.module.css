@@ -13,9 +13,8 @@
     justify-content: center;
     align-items: center;
 
-    @media only screen and (min-width: 900px) {
-        flex-grow: 1;
-        flex-basis: 50%;
+    @media only screen and (min-width: 768px) {
+        flex-basis: 40%;
     }
 }
 
@@ -31,9 +30,8 @@
     justify-content: center;
     padding: 24px 12px;
 
-    @media only screen and (min-width: 900px) {
-        /* flex-grow: 1; */
-        /* flex-basis: 50%; */
+    @media only screen and (min-width: 768px) {
+        flex-basis: 60%;
     }
 
     & h1 {
