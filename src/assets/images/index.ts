@@ -1,6 +1,6 @@
 import model_1082 from './tetiana_andronenko_1082.jpg';
 import model_1083 from './tetiana_andronenko_1083.jpg';
-import model_1084 from './tetiana_andronenko_1084.jpg';
+import model_1086 from './tetiana_andronenko_1086.jpg';
 import model_1088 from './tetiana_andronenko_1088.jpg';
 import model_1091 from './tetiana_andronenko_1091.jpg';
 import model_1093 from './tetiana_andronenko_1093.jpg';
@@ -22,7 +22,7 @@ import model_1130 from './tetiana_andronenko_1130.jpg';
 export const images = {
   model_1082,
   model_1083,
-  model_1084,
+  model_1086,
   model_1088,
   model_1091,
   model_1093,

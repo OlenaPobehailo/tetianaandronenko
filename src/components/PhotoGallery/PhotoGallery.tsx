@@ -10,7 +10,7 @@ import css from './PhotoGallery.module.css';
 const {
   model_1082,
   model_1083,
-  model_1084,
+  model_1086,
   model_1088,
   model_1091,
   model_1093,
@@ -48,7 +48,7 @@ const photos = [
     key: '1',
   },
   {
-    src: model_1084.src,
+    src: model_1086.src,
     width: 2,
     height: 3,
     alt: 'Black and white photo of a model with large stylish earrings',
