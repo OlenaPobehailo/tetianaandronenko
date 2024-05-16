@@ -1,20 +1,20 @@
 @import 'normalize.css';
 
 :root {
-    --regular: 'OpenSans-Regular';
-    --medium: 'OpenSans-Medium';
-    --semibold: 'OpenSans-Semibold';
-    --bold: 'OpenSans-Bold';
+  --regular: 'OpenSans-Regular';
+  --medium: 'OpenSans-Medium';
+  --semibold: 'OpenSans-Semibold';
+  --bold: 'OpenSans-Bold';
 }
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 h1,
@@ -24,7 +24,7 @@ h4,
 h5,
 h6,
 p {
-    margin: 0;
+  margin: 0;
 }
 
 h1,
@@ -33,81 +33,81 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    font-family: 'OpenSans-Semibold', sans-serif;
-    font-weight: 500;
+  margin: 0;
+  font-family: 'OpenSans-Semibold', sans-serif;
+  font-weight: 500;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-
-    background: linear-gradient(to bottom, #fefefe, #efefef);
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'OpenSans-Regular', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #fefefe, #efefef);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  font-family: 'OpenSans-Regular', sans-serif;
 }
 
 p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 ul,
 ol,
 li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 button {
-    cursor: pointer;
-    border: none;
-    color: inherit;
-    display: block;
-    max-width: 100%;
-    height: auto;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .modal-open {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 @font-face {
-    font-family: 'OpenSans-Regular';
-    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'OpenSans-Regular';
+  src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'OpenSans-Medium';
-    src: url('../fonts/OpenSans-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'OpenSans-Medium';
+  src: url('../fonts/OpenSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'OpenSans-Semibold';
-    src: url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'OpenSans-Semibold';
+  src: url('../fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'OpenSans-Bold';
-    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
