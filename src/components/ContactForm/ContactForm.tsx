@@ -104,6 +104,7 @@ const ContactForm = () => {
                         >
                             {isSubmitting ? 'Sending...' : 'Send'}
                         </button>
+                        <p className={css.mail}>tetiana.andronenko@gmail.com</p>
                     </Form>
                 </div>
             )}
