@@ -1,79 +1,92 @@
-.backdrop {
-    position: relative;
+@keyframes modalEnter {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    overflow-y: auto;
+.backdrop {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  overflow-y: auto;
 }
 
 .modalContent {
-    /* position: relative; */
+  /* position: relative; */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background-color: transparent;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin: 14px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 14px;
 
-    @media only screen and (min-width: 768px) {
-        margin: 30px;
-    }
+  animation: modalEnter 0.5s ease-out;
+
+  @media only screen and (min-width: 768px) {
+    margin: 30px;
+  }
 }
 
 .close {
-    position: absolute;
-    /* top: -20px;
+  position: absolute;
+  /* top: -20px;
     right: -4px; */
 
-    top: 0;
-    right: 0;
+  top: 0;
+  right: 0;
 
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 
-    background-color: transparent;
-    color: #888;
+  background-color: transparent;
+  color: #888;
 
-    cursor: pointer;
-    font-size: 24px;
+  cursor: pointer;
+  font-size: 24px;
 
-    transition: color 0.5s ease;
+  transition: color 0.5s ease;
 
-    @media only screen and (min-width: 400px) {
-        /* top: -28px;
+  @media only screen and (min-width: 400px) {
+    /* top: -28px;
         right: -8px; */
-        font-size: 36px;
-    }
+    font-size: 36px;
+  }
 
-    @media only screen and (min-width: 560px) {
-        /* top: -32px;
+  @media only screen and (min-width: 560px) {
+    /* top: -32px;
         right: -8px; */
-        font-size: 40px;
-    }
+    font-size: 40px;
+  }
 
-    @media only screen and (min-width: 768px) {
-        /* top: -36px;
+  @media only screen and (min-width: 768px) {
+    /* top: -36px;
         right: -36px; */
-        font-size: 48px;
-    }
+    font-size: 48px;
+  }
 
-    @media only screen and (min-width: 900px) {
-        /* top: -48px;
+  @media only screen and (min-width: 900px) {
+    /* top: -48px;
         right: -48px; */
-        font-size: 64px;
-    }
+    font-size: 64px;
+  }
 }
 
 .close:hover {
-    color: #444;
+  color: #444;
 }
