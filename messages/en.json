@@ -1,0 +1,31 @@
+{
+  "Navigation": {
+    "name": "Tetiana Andronenko",
+    "role": "Model",
+    "about": "About",
+    "gallery": "Gallery",
+    "contact": "Contact me"
+  },
+
+  "Gallery": {},
+
+  "About": {
+    "title": "About me",
+    "text-1": "Ukrainian woman who is manifesting herself in this world in many ways. Professional Coach, wife, mom and a woman who loves life. I bring elegance and casual chic to photography. Revealing the depth of a woman's feelings and beauty.",
+    "text-2": "Working with me fills you with energy!"
+  },
+
+  "Contacts": {
+    "name": "Your name:",
+    "email": "Your email:",
+    "subject": "Subject:",
+    "message": "Your message:",
+    "nameError": "Please enter your name",
+    "emailError": "Please enter your email",
+    "emailIncorrect": "Please enter correct email address",
+    "subjectError": "Please enter subject",
+    "messageError": "Please enter your message",
+    "send": "Send",
+    "sending": "Sending..."
+  }
+}

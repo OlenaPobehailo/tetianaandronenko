@@ -1,0 +1,34 @@
+.form {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 4px;
+}
+
+.radioGroup {
+  border: 1px solid #d0def4;
+  display: inline-flex;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.radioInput {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+.radioLabel {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+
+.radioInput:checked + .radioLabel {
+  background: #d0def4;
+}
+
+.radioLabel + .radioInput + .radioLabel {
+  border-left: 1px solid #d0def4;
+}

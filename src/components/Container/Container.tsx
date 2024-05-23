@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
-import css from './Container.module.css'
+import { ReactNode } from 'react';
+import css from './Container.module.css';
 
 export interface IContainerProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
 export default function Container({ children }: IContainerProps) {
-    return <div className={css.container}>{children}</div>
+  return <div className={css.container}>{children}</div>;
 }

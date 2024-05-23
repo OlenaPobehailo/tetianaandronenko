@@ -1,10 +1,11 @@
 'use client';
+
 import Image from 'next/image';
 import { useState } from 'react';
 import Gallery from 'react-photo-gallery';
 import { images } from '@/assets/images';
-import Loader from '../Loader';
-import Modal from '../Modal';
+import Loader from '@/components/Loader';
+import Modal from '@/components/Modal';
 import css from './PhotoGallery.module.css';
 
 const {

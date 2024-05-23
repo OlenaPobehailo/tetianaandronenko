@@ -1,115 +1,119 @@
-'use client'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import * as Yup from 'yup'
-import css from './ContactForm.module.css'
+'use client';
+
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useTranslations } from 'next-intl';
+import * as Yup from 'yup';
+import css from './ContactForm.module.css';
 
 const ContactForm = () => {
-    return (
-        <Formik
-            initialValues={{
-                subject: '',
-                name: '',
-                email: '',
-                message: '',
-            }}
-            validationSchema={Yup.object({
-                subject: Yup.string().required('Please enter subject'),
-                name: Yup.string().required('Please enter your name'),
-                email: Yup.string()
-                    .email('Please enter correct email address')
-                    .required('Please enter your email'),
-                message: Yup.string().required('Please enter your message'),
-            })}
-            onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                    const mailToLink = `mailto:tetiana.andronenko@gmail.com?subject=${encodeURIComponent(values.subject)}&body=Name: ${values.name}%0D%0AEmail: ${values.email}%0D%0ASubject: ${values.subject}%0D%0AMessage: ${values.message}`
-                    window.location.href = mailToLink
-                    setSubmitting(false)
-                }, 400)
-            }}
-        >
-            {({ isSubmitting }) => (
-                <div className={css.formWrapper}>
-                    <Form>
-                        <div className={css.allFieldsWrapper}>
-                            <div className={css.fieldWrapper}>
-                                <label htmlFor="name">Your name:</label>
-                                <Field
-                                    className={css.input}
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    placeholder="Your name:"
-                                />
-                                <ErrorMessage
-                                    name="name"
-                                    component="div"
-                                    className={css.error}
-                                />
-                            </div>
+  const t = useTranslations('Contacts');
 
-                            <div className={css.fieldWrapper}>
-                                <label htmlFor="email">Your email:</label>
-                                <Field
-                                    className={css.input}
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="Your email:"
-                                />
-                                <ErrorMessage
-                                    name="email"
-                                    component="div"
-                                    className={css.error}
-                                />
-                            </div>
+  return (
+    <Formik
+      initialValues={{
+        subject: '',
+        name: '',
+        email: '',
+        message: '',
+      }}
+      validationSchema={Yup.object({
+        name: Yup.string().required(t('nameError')),
+        email: Yup.string()
+          .email(t('emailIncorrect'))
+          .required(t('emailError')),
+        subject: Yup.string().required(t('subjectError')),
+        message: Yup.string().required(t('messageError')),
+      })}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          const mailToLink = `mailto:tetiana.andronenko@gmail.com?subject=${encodeURIComponent(values.subject)}&body=Name: ${values.name}%0D%0AEmail: ${values.email}%0D%0ASubject: ${values.subject}%0D%0AMessage: ${values.message}`;
+          window.location.href = mailToLink;
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+      {({ isSubmitting }) => (
+        <div className={css.formWrapper}>
+          <Form>
+            <div className={css.allFieldsWrapper}>
+              <div className={css.fieldWrapper}>
+                <label htmlFor="name">{t('name')}</label>
+                <Field
+                  className={css.input}
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder={t('name')}
+                />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className={css.error}
+                />
+              </div>
 
-                            <div className={css.fieldWrapper}>
-                                <label htmlFor="subject">Subject:</label>
-                                <Field
-                                    className={css.input}
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    placeholder="Subject:"
-                                />
-                                <ErrorMessage
-                                    name="subject"
-                                    component="div"
-                                    className={css.error}
-                                />
-                            </div>
+              <div className={css.fieldWrapper}>
+                <label htmlFor="email">{t('email')}</label>
+                <Field
+                  className={css.input}
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder={t('email')}
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className={css.error}
+                />
+              </div>
 
-                            <div className={css.fieldWrapper}>
-                                <label htmlFor="message">Your message:</label>
-                                <Field
-                                    className={css.input}
-                                    as="textarea"
-                                    id="message"
-                                    name="message"
-                                    placeholder="Your message:"
-                                />
-                                <ErrorMessage
-                                    name="message"
-                                    component="div"
-                                    className={css.error}
-                                />
-                            </div>
-                        </div>
+              <div className={css.fieldWrapper}>
+                <label htmlFor="subject">{t('subject')}</label>
+                <Field
+                  className={css.input}
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder={t('subject')}
+                />
+                <ErrorMessage
+                  name="subject"
+                  component="div"
+                  className={css.error}
+                />
+              </div>
 
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className={css.submitButton}
-                        >
-                            {isSubmitting ? 'Sending...' : 'Send'}
-                        </button>
-                        <p className={css.mail}>tetiana.andronenko@gmail.com</p>
-                    </Form>
-                </div>
-            )}
-        </Formik>
-    )
-}
+              <div className={css.fieldWrapper}>
+                <label htmlFor="message">{t('message')}</label>
+                <Field
+                  className={css.input}
+                  as="textarea"
+                  id="message"
+                  name="message"
+                  placeholder={t('message')}
+                />
+                <ErrorMessage
+                  name="message"
+                  component="div"
+                  className={css.error}
+                />
+              </div>
+            </div>
 
-export default ContactForm
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={css.submitButton}
+            >
+              {isSubmitting ? t('sending') : t('send')}
+            </button>
+            <p className={css.mail}>tetiana.andronenko@gmail.com</p>
+          </Form>
+        </div>
+      )}
+    </Formik>
+  );
+};
+
+export default ContactForm;

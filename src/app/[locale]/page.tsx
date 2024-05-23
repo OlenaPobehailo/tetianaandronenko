@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
 import PageWrapper from '@/components/PageWrapper';
 import PhotoGallery from '@/components/PhotoGallery';
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const t = useTranslations('Index');
   return (
     <>
       <PageWrapper>

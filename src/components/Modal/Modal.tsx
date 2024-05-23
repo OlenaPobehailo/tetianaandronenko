@@ -1,51 +1,48 @@
-'use client'
+'use client';
 
-import { ReactNode, useEffect } from 'react'
-import { IoMdClose } from 'react-icons/io'
-import css from './Modal.module.css'
+import { ReactNode, useEffect } from 'react';
+import { IoMdClose } from 'react-icons/io';
+import css from './Modal.module.css';
 
 interface ModalProps {
-    isOpen: boolean
-    onClose: () => void
-    children: ReactNode
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-    useEffect(() => {
-        const handleKeyPress = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                onClose()
-            }
-        }
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
 
-        window.addEventListener('keydown', handleKeyPress)
+    window.addEventListener('keydown', handleKeyPress);
 
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress)
-        }
-    }, [onClose])
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [onClose]);
 
-    const handleModalClick = (event: React.MouseEvent) => {
-        if (event.target === event.currentTarget) {
-            onClose()
-        }
+  const handleModalClick = (event: React.MouseEvent) => {
+    if (event.target === event.currentTarget) {
+      onClose();
     }
+  };
 
-    if (!isOpen) return null
+  if (!isOpen) return null;
 
-    return (
-        <div className={css.backdrop} onClick={onClose}>
-            <button className={css.close} onClick={onClose}>
-                <IoMdClose />
-            </button>
-            <div
-                className={css.modalContent}
-                onClick={(e) => e.stopPropagation()}
-            >
-                {children}
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className={css.backdrop} onClick={onClose}>
+      <button className={css.close} onClick={onClose}>
+        <IoMdClose />
+      </button>
+      <div className={css.modalContent} onClick={e => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>
+  );
+};
 
-export default Modal
+export default Modal;
