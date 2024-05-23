@@ -7,7 +7,7 @@
 .radioGroup {
   border: 1px solid #d0def4;
   display: inline-flex;
-  margin: 20px;
+  margin: 0 20px;
   border-radius: 10px;
   overflow: hidden;
 }
