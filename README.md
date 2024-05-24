@@ -10,6 +10,7 @@ seamless user experience.
 - Responsive Design: Ensures optimal viewing experience across devices.
 - Modal Window: Clicking on an image opens a modal window for a detailed view.
 - Loader: Displays a loader during image loading for enhanced user experience.
+- Internationalization: Implemented using next-intl for multilingual support.
 
 ## Technologies Used
 
