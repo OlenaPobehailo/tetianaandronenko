@@ -11,19 +11,19 @@ export default function Navbar(props: INavbarProps) {
   const pathname = usePathname();
 
   const navigation = [
-    { name: t('Links.Home'), href: '/', current: pathname === '/' },
+    { name: t('home'), href: '/', current: pathname === '/' },
     {
-      name: t('Links.About'),
+      name: t('about'),
       href: '/about',
       current: pathname === '/about',
     },
     {
-      name: t('Links.Gallery'),
+      name: t('gallery'),
       href: '/gallery',
       current: pathname === '/gallery',
     },
     {
-      name: t('Links.Contact'),
+      name: t('contact'),
       href: '/contact',
       current: pathname === '/contact',
     },

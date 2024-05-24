@@ -1,7 +1,32 @@
 {
+  "HomeMetaData": {
+    "title": "Tetiana Andronenko",
+    "description": "Tetiana Andronenko - model from Ukraine.",
+    "keywords": "model, photo model, model agency, models over 30, fashion model, beautiful models, beautiful model."
+  },
+
+  "AboutMetaData": {
+    "title": "About Tetiana Andronenko",
+    "description": "Discover the many facets of a Ukrainian woman - professional coach, wife, mom, and a model who brings elegance and casual chic to every photoshoot.",
+    "keywords": "Ukrainian model, professional coach, elegance, casual chic, photography, woman's beauty, woman's feelings, life enthusiast, family, energy-filled photoshoot, lifestyle photography, professional"
+  },
+
+  "GalleryMetaData": {
+    "title": "Tetiana Andronenko - Gallery",
+    "description": "Explore the portfolio of a Ukrainian model who combines elegance with casual chic. Each photo reveals the depth of a woman's feelings and natural beauty.",
+    "keywords": "Ukrainian model, portfolio, elegance, casual chic, woman's feelings, natural beauty, photos"
+  },
+
+  "ContactsMetaData": {
+    "title": "Tetiana Andronenko - Contacts",
+    "description": "Get in touch with a Ukrainian model and professional coach who embodies elegance and casual chic. Fill your life with energy.",
+    "keywords": "Ukrainian model, professional coach, contact, elegance, casual chic, energy"
+  },
+
   "Navigation": {
     "name": "Tetiana Andronenko",
     "role": "Model",
+    "home": "Home",
     "about": "About",
     "gallery": "Gallery",
     "contact": "Contact me"
