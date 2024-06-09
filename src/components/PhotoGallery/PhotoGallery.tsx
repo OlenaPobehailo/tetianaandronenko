@@ -32,7 +32,7 @@ const PhotoGallery = () => {
     document.body.classList.remove('modal-open');
   };
 
-  const handleContextMenu = e => {
+  const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
   };
 
