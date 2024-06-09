@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import ScrollArrow from '@/components/ScrollArrow';
 import { images } from '@/assets/images';
+import { handleContextMenu } from '@/utils/handleContextMenu';
 import css from './About.module.css';
 
 type Props = {};
@@ -20,6 +23,7 @@ const About = (props: Props) => {
             width="800"
             alt="Model Tetiana Andronenko"
             priority={true}
+            onContextMenu={handleContextMenu}
           />
         </div>
         <div className={css.about}>

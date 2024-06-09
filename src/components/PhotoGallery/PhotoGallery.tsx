@@ -6,6 +6,7 @@ import Gallery from 'react-photo-gallery';
 import Loader from '@/components/Loader';
 import Modal from '@/components/Modal';
 import { photos } from '@/constants/photos';
+import { handleContextMenu } from '@/utils/handleContextMenu';
 import css from './PhotoGallery.module.css';
 
 export interface IPhotoGalleryProps {}
@@ -30,10 +31,6 @@ const PhotoGallery = () => {
     setSelectedPhoto(null);
     setShowModal(false);
     document.body.classList.remove('modal-open');
-  };
-
-  const handleContextMenu = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
   };
 
   return (
