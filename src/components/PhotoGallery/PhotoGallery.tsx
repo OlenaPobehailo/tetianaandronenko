@@ -6,7 +6,6 @@ import Gallery from 'react-photo-gallery';
 import Loader from '@/components/Loader';
 import Modal from '@/components/Modal';
 import { photos } from '@/constants/photos';
-import { handleContextMenu } from '@/utils/handleContextMenu';
 import css from './PhotoGallery.module.css';
 
 export interface IPhotoGalleryProps {}
@@ -66,7 +65,6 @@ const PhotoGallery = () => {
               onLoad={() => setLoading(false)}
               width={photo.width}
               height={photo.height}
-              onContextMenu={handleContextMenu}
             />
           </div>
         )}
@@ -85,7 +83,6 @@ const PhotoGallery = () => {
             onLoad={() => setLoadingPhoto(false)}
             width="1000"
             height="1000"
-            onContextMenu={handleContextMenu}
           />
         )}
         {loadingPhoto && <Loader />}

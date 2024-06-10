@@ -9,6 +9,13 @@
 
 html {
   box-sizing: border-box;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 *,
@@ -46,6 +53,7 @@ body {
   background-position: center;
   background-size: 100% 100%;
   font-family: 'OpenSans-Regular', sans-serif;
+  user-select: none;
 }
 
 p:last-child {

@@ -2,6 +2,7 @@ import { NextIntlClientProvider, useMessages } from 'next-intl';
 import Container from '@/components/Container';
 import Header from '@/components/Header/Header';
 import '../globals.css';
+import FullContainer from '@/components/Container/FullContainer';
 
 export default function RootLayout({
   children,
@@ -16,10 +17,12 @@ export default function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Container>
-            <Header />
-            <main>{children}</main>
-          </Container>
+          <FullContainer>
+            <Container>
+              <Header />
+              <main>{children}</main>
+            </Container>
+          </FullContainer>
         </NextIntlClientProvider>
       </body>
     </html>
