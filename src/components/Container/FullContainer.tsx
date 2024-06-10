@@ -1,5 +1,4 @@
 'use client';
-
 import { ReactNode } from 'react';
 
 export interface IContainerProps {
@@ -13,7 +12,7 @@ export default function FullContainer({ children }: IContainerProps) {
   };
 
   return (
-    <div class="scroll-container" onContextMenu={handleContextMenu}>
+    <div className="scroll-container" onContextMenu={handleContextMenu}>
       {children}
     </div>
   );
