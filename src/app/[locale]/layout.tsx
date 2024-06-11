@@ -3,6 +3,7 @@ import Container from '@/components/Container';
 import Header from '@/components/Header/Header';
 import '../globals.css';
 import FullContainer from '@/components/Container/FullContainer';
+import Footer from '@/components/Footer';
 
 export default function RootLayout({
   children,
@@ -21,6 +22,7 @@ export default function RootLayout({
             <Container>
               <Header />
               <main>{children}</main>
+              <Footer />
             </Container>
           </FullContainer>
         </NextIntlClientProvider>
