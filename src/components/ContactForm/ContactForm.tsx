@@ -2,7 +2,7 @@
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useTranslations } from 'next-intl';
-import * as Yup from 'yup';
+import { validationSchema } from '@/validation/validationSchema';
 import css from './ContactForm.module.css';
 
 const ContactForm = () => {
@@ -16,14 +16,7 @@ const ContactForm = () => {
         email: '',
         message: '',
       }}
-      validationSchema={Yup.object({
-        name: Yup.string().required(t('nameError')),
-        email: Yup.string()
-          .email(t('emailIncorrect'))
-          .required(t('emailError')),
-        subject: Yup.string().required(t('subjectError')),
-        message: Yup.string().required(t('messageError')),
-      })}
+      validationSchema={validationSchema(t)}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           const mailToLink = `mailto:tetiana.andronenko@gmail.com?subject=${encodeURIComponent(values.subject)}&body=Name: ${values.name}%0D%0AEmail: ${values.email}%0D%0ASubject: ${values.subject}%0D%0AMessage: ${values.message}`;
