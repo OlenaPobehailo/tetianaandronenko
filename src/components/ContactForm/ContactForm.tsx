@@ -8,6 +8,17 @@ import css from './ContactForm.module.css';
 const ContactForm = () => {
   const t = useTranslations('Contacts');
 
+  const handleSubmit = (
+    values: any,
+    { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
+  ) => {
+    setTimeout(() => {
+      const mailToLink = `mailto:tetiana.andronenko@gmail.com?subject=${encodeURIComponent(values.subject)}&body=Name: ${values.name}%0D%0AEmail: ${values.email}%0D%0ASubject: ${values.subject}%0D%0AMessage: ${values.message}`;
+      window.location.href = mailToLink;
+      setSubmitting(false);
+    }, 400);
+  };
+
   return (
     <Formik
       initialValues={{
@@ -17,13 +28,7 @@ const ContactForm = () => {
         message: '',
       }}
       validationSchema={validationSchema(t)}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          const mailToLink = `mailto:tetiana.andronenko@gmail.com?subject=${encodeURIComponent(values.subject)}&body=Name: ${values.name}%0D%0AEmail: ${values.email}%0D%0ASubject: ${values.subject}%0D%0AMessage: ${values.message}`;
-          window.location.href = mailToLink;
-          setSubmitting(false);
-        }, 400);
-      }}
+      onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
         <div className={css.formWrapper}>
