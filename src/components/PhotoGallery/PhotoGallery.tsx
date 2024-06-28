@@ -60,7 +60,6 @@ const PhotoGallery = () => {
             <Image
               src={photo.src}
               alt={photo.alt || photo.src}
-              className={css.imageContainer}
               style={{ cursor: 'pointer' }}
               onLoad={() => setLoading(false)}
               width={photo.width}

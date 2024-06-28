@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 480px) {
     display: block;
     width: 100% !important;
     height: auto !important;
@@ -15,9 +15,9 @@
 }
 
 .galleryItem:hover img {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .imageContainer {
-  max-height: 90vh;
+  max-height: 100vh;
 }
