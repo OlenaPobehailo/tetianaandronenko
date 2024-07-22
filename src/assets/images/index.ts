@@ -18,6 +18,14 @@ import model_1123 from './tetiana_andronenko_1123.jpg';
 import model_1126 from './tetiana_andronenko_1126.jpg';
 import model_1127 from './tetiana_andronenko_1127.jpg';
 import model_1130 from './tetiana_andronenko_1130.jpg';
+import model_sea_1 from './tetiana_andronenko_sea_1.jpg';
+import model_sea_2 from './tetiana_andronenko_sea_2.jpg';
+import model_sea_3 from './tetiana_andronenko_sea_3.jpg';
+import model_sea_4 from './tetiana_andronenko_sea_4.jpg';
+import model_sea_5 from './tetiana_andronenko_sea_5.jpg';
+import model_sea_6 from './tetiana_andronenko_sea_6.jpg';
+import model_sea_7 from './tetiana_andronenko_sea_7.jpg';
+import model_sea_8 from './tetiana_andronenko_sea_8.jpg';
 
 export const images = {
   model_1082,
@@ -40,4 +48,12 @@ export const images = {
   model_1126,
   model_1127,
   model_1130,
+  model_sea_1,
+  model_sea_2,
+  model_sea_3,
+  model_sea_4,
+  model_sea_5,
+  model_sea_6,
+  model_sea_7,
+  model_sea_8,
 };

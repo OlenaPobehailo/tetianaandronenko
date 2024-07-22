@@ -21,6 +21,14 @@ const {
   model_1126,
   model_1127,
   model_1130,
+  model_sea_1,
+  model_sea_2,
+  model_sea_3,
+  model_sea_4,
+  model_sea_5,
+  model_sea_6,
+  model_sea_7,
+  model_sea_8,
 } = images;
 
 export const photos = [
@@ -168,5 +176,62 @@ export const photos = [
     height: 3,
     alt: 'A model with bare feet, dressed in a white shirt and black pants, is standing by the window.',
     key: '19',
+  },
+
+  {
+    src: model_sea_1.src,
+    width: 2,
+    height: 3,
+    alt: 'A model in a black swimsuit on the seashore in the rocks, monochrome photo',
+    key: '20',
+  },
+  {
+    src: model_sea_2.src,
+    width: 2,
+    height: 3,
+    alt: 'A model in a black swimsuit on the seashore in the rocks.',
+    key: '21',
+  },
+  {
+    src: model_sea_3.src,
+    width: 2,
+    height: 3,
+    alt: 'A model in green dress on the seashore.',
+    key: '22',
+  },
+  {
+    src: model_sea_4.src,
+    width: 2,
+    height: 3,
+    alt: 'A model on the seashore, monochrome photo',
+    key: '23',
+  },
+  {
+    src: model_sea_5.src,
+    width: 2,
+    height: 3,
+    alt: 'A model in a black swimsuit leans on a rock by the sea',
+    key: '24',
+  },
+  {
+    src: model_sea_6.src,
+    width: 2,
+    height: 3,
+    alt: 'A model in a black swimsuit on the seashore next to a rock, monochrome photo.',
+    key: '25',
+  },
+  {
+    src: model_sea_7.src,
+    width: 2,
+    height: 3,
+    alt: 'A model in a black swimsuit on the seashore next to a rock',
+    key: '26',
+  },
+  {
+    src: model_sea_8.src,
+    width: 2,
+    height: 3,
+    alt: 'A model in a black swimsuit lies on the seashore',
+    key: '27',
   },
 ];
