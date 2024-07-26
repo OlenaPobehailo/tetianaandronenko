@@ -32,7 +32,10 @@
     "contact": "Contact me"
   },
 
-  "Gallery": {},
+  "Gallery": {
+    "model_1082": "Black and white photo of a model sitting on the floor, wearing black pants and a white shirt",
+    "model_1083": "Black and white photo of a smiling model sitting on the sofa"
+  },
 
   "About": {
     "title": "About me",
@@ -52,5 +55,8 @@
     "messageError": "Please enter your message",
     "send": "Send",
     "sending": "Sending..."
+  },
+  "Footer": {
+    "copyright": "All photographs are protected by copyright. Distribution or use without permission is prohibited."
   }
 }
