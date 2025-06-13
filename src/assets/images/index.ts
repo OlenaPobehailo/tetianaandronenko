@@ -26,6 +26,8 @@ import model_sea_5 from './tetiana_andronenko_sea_5.jpg';
 import model_sea_6 from './tetiana_andronenko_sea_6.jpg';
 import model_sea_7 from './tetiana_andronenko_sea_7.jpg';
 import model_sea_8 from './tetiana_andronenko_sea_8.jpg';
+import model_6602 from './tetiana_andronenko_6602.jpg';
+import model_6616 from './tetiana_andronenko_6616.jpg';
 
 export const images = {
   model_1082,
@@ -56,4 +58,6 @@ export const images = {
   model_sea_6,
   model_sea_7,
   model_sea_8,
+  model_6602,
+  model_6616,
 };

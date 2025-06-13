@@ -22,25 +22,25 @@
 }
 
 .subtitle {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 
   font-size: 16px;
   text-align: center;
 
   @media only screen and (min-width: 400px) {
-    font-size: 24px;
+    font-size: 16px;
   }
 
   @media only screen and (min-width: 768px) {
-    font-size: 28px;
+    font-size: 16px;
   }
 
   @media only screen and (min-width: 1024px) {
-    font-size: 32px;
+    font-size: 16px;
   }
 
   @media only screen and (min-width: 1440px) {
-    font-size: 36px;
+    font-size: 16px;
   }
 }
 
@@ -55,16 +55,16 @@
   gap: 10px;
 
   font-family: var(--medium);
-  font-size: 14px;
+  font-size: 12px;
 
   @media only screen and (min-width: 400px) {
     gap: 12px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   @media only screen and (min-width: 768px) {
     gap: 16px;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   & li:hover {
