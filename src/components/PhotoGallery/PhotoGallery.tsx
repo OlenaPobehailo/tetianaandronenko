@@ -7,9 +7,8 @@ import Loader from '@/components/Loader';
 import Modal from '@/components/Modal';
 import { photos } from '@/constants/photos';
 import css from './PhotoGallery.module.css';
-import ScrollArrow from '../ScrollArrow';
 
-export interface IPhotoGalleryProps { }
+export interface IPhotoGalleryProps {}
 
 const PhotoGallery = () => {
   const [showModal, setShowModal] = useState(false);
@@ -34,72 +33,60 @@ const PhotoGallery = () => {
   };
 
   return (
-    <>
-      <div className={css.scrollTop}>
-        <ScrollArrow />
-      </div>
-      <div className={css.scrollBottom}>
-        <ScrollArrow />
-      </div>
-
-      <div>
-        {loading && <Loader />}
-
-        <Gallery
-          photos={photos}
-          onClick={openModal}
-          direction="row"
-          margin={4}
-          renderImage={({ photo, margin, onClick }) => (
-            <div
-              key={photo.key}
-              className={css.galleryItem}
-              style={{
-                margin,
-                height: photo.height,
-                width: photo.width,
-              }}
-              onClick={event =>
-                photo.key
-                  ? onClick!(event, {
+    <div>
+      {loading && <Loader />}
+      <Gallery
+        photos={photos}
+        onClick={openModal}
+        direction="row"
+        margin={4}
+        renderImage={({ photo, margin, onClick }) => (
+          <div
+            key={photo.key}
+            className={css.galleryItem}
+            style={{
+              margin,
+              height: photo.height,
+              width: photo.width,
+            }}
+            onClick={event =>
+              photo.key
+                ? onClick!(event, {
                     index: parseInt(photo.key),
                   })
-                  : undefined
-              }
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt || photo.src}
-                style={{ cursor: 'pointer' }}
-                onLoad={() => setLoading(false)}
-                width={photo.width}
-                height={photo.height}
-              />
-            </div>
-          )}
-        />
-
-        <Modal isOpen={showModal} onClose={closeModal}>
-          {selectedPhoto && (
+                : undefined
+            }
+          >
             <Image
-              className={css.imageContainer}
-              src={selectedPhoto}
-              alt={
-                photos.find(photo => photo.src === selectedPhoto)?.alt ||
-                selectedPhoto
-              }
-              style={{ width: '100%', height: 'auto' }}
-              onLoad={() => setLoadingPhoto(false)}
-              width="1000"
-              height="1000"
+              src={photo.src}
+              alt={photo.alt || photo.src}
+              style={{ cursor: 'pointer' }}
+              onLoad={() => setLoading(false)}
+              width={photo.width}
+              height={photo.height}
             />
-          )}
-          {loadingPhoto && <Loader />}
-        </Modal>
-      </div>
+          </div>
+        )}
+      />
 
-
-    </>
+      <Modal isOpen={showModal} onClose={closeModal}>
+        {selectedPhoto && (
+          <Image
+            className={css.imageContainer}
+            src={selectedPhoto}
+            alt={
+              photos.find(photo => photo.src === selectedPhoto)?.alt ||
+              selectedPhoto
+            }
+            style={{ width: '100%', height: 'auto' }}
+            onLoad={() => setLoadingPhoto(false)}
+            width="1000"
+            height="1000"
+          />
+        )}
+        {loadingPhoto && <Loader />}
+      </Modal>
+    </div>
   );
 };
 

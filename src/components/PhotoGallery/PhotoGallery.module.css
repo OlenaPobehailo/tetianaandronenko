@@ -21,29 +21,3 @@
 .imageContainer {
   max-height: 100vh;
 }
-
-.scrollTop {
-  position: fixed;
-  top: 20px;
-  right: 10px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.scrollBottom {
-  position: fixed;
-  top: 200px;
-  right: 10px;
-  z-index: 1000;
-}
-
-.scrollBottom :global(.scrollArrow) {
-  top: auto !important;
-  bottom: 20px !important;
-}
-
-.scrollBottom :global(.upArrow),
-.scrollBottom :global(.downArrow) {
-  top: auto !important;
-  bottom: 20px !important;
-}
